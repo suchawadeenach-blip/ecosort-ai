@@ -1,0 +1,8 @@
+{
+  "name": "ecosort-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EcoSort AI - image-based waste classification web app",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

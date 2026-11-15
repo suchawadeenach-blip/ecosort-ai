@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16734b">
+  <title>EcoSort AI | คัดแยกขยะอัจฉริยะ</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="logo">♻</span><span>EcoSort <b>AI</b></span></a>
+  <span class="tagline">แยกขยะง่าย ๆ เริ่มได้จากภาพเดียว</span>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">SMART WASTE CLASSIFICATION</p>
+      <h1>ทิ้งให้ถูกถัง<br><span>โลกก็ดีขึ้นได้</span></h1>
+      <p class="lead">ถ่ายภาพหรือเลือกรูปขยะ แล้วให้ AI ช่วยวิเคราะห์ประเภทและแนะนำวิธีจัดการ</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">🌱</div>
+  </section>
+
+  <section class="panel">
+    <div class="section-head">
+      <div><p class="eyebrow">STEP 01</p><h2>เพิ่มภาพขยะ</h2></div>
+      <span id="status" class="status">กำลังตรวจสอบระบบ…</span>
+    </div>
+    <div class="workspace">
+      <div class="preview" id="preview">
+        <div class="placeholder"><span>📷</span><b>ภาพของคุณจะแสดงที่นี่</b><small>รองรับ JPG, PNG และ WEBP</small></div>
+        <img id="photo" alt="ภาพขยะที่เลือก" hidden>
+      </div>
+      <div class="actions">
+        <label class="btn secondary" for="fileInput">เลือกรูปจากเครื่อง</label>
+        <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+        <button id="cameraBtn" class="btn secondary" type="button">เปิดกล้อง</button>
+        <button id="analyzeBtn" class="btn primary" type="button" disabled>✨ วิเคราะห์ด้วย AI</button>
+        <p class="hint">ถ่ายให้เห็นวัตถุชัดเจน และควรมีขยะหลักเพียงชิ้นเดียวต่อภาพ</p>
+      </div>
+    </div>
+    <div id="cameraArea" class="camera" hidden>
+      <video id="video" autoplay playsinline></video>
+      <div class="camera-actions"><button id="captureBtn" class="btn primary">ถ่ายภาพ</button><button id="closeCameraBtn" class="btn secondary">ปิดกล้อง</button></div>
+    </div>
+  </section>
+
+  <section id="resultPanel" class="panel result-panel" hidden>
+    <p class="eyebrow">STEP 02</p><h2>ผลการวิเคราะห์</h2>
+    <div class="result-main">
+      <div class="category-icon" id="categoryIcon">♻️</div>
+      <div><small>ประเภทขยะ</small><h3 id="category">—</h3><p id="itemName"></p></div>
+      <div class="confidence"><strong id="confidence">—%</strong><small>ระดับความมั่นใจของ AI</small></div>
+    </div>
+    <div class="bin-box"><small>ถังที่แนะนำ</small><h3 id="bin">—</h3><p id="advice"></p></div>
+    <div class="note" id="reason"></div>
+    <div class="warning" id="safety" hidden></div>
+    <p class="disclaimer">ผลวิเคราะห์เป็นคำแนะนำจาก AI อาจคลาดเคลื่อนได้ โดยเฉพาะภาพไม่ชัดหรือวัสดุที่มองไม่เห็น โปรดตรวจสอบก่อนทิ้งจริง</p>
+  </section>
+
+  <section class="types">
+    <h2>รู้จักขยะ 4 ประเภท</h2>
+    <div class="type-grid">
+      <article><span>♻️</span><b>รีไซเคิล</b><small>กระดาษ ขวดพลาสติก แก้ว โลหะ</small></article>
+      <article><span>🍃</span><b>อินทรีย์</b><small>เศษอาหาร ใบไม้ วัสดุย่อยสลายได้</small></article>
+      <article><span>🗑️</span><b>ทั่วไป</b><small>ซองขนม กระดาษเปื้อน และขยะปนเปื้อน</small></article>
+      <article><span>☣️</span><b>อันตราย</b><small>ถ่านไฟฉาย แบตเตอรี่ หลอดไฟ สารเคมี</small></article>
+    </div>
+  </section>
+  <footer>EcoSort AI · ใช้ AI เพื่อช่วยคัดแยกขยะอย่างรับผิดชอบ</footer>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
